@@ -36,7 +36,7 @@ spark = SparkSession.builder \
         .master("local[3]") \
         .getOrCreate()
 
-# reading json file
+# reading json file (replace the file path with your file path)
 complex_json_df = spark.read.option("multiline", "true").json("D:\\datasetss\\json_data\\complex_json_trip.json")
 res = flattenDataFrame(complex_json_df)
 res.printSchema()
